@@ -1,0 +1,14 @@
+.external {
+    color: green;
+    font-size: 20px;
+}
+ 
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+ 
+#special {
+    color: orange;
+    font-size: 24px;
+}

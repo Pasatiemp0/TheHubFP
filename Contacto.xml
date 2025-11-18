@@ -1,0 +1,22 @@
+<!DOCTYPE agenda>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda autor="Jiandong Yao(Alejandro)" xmlns="https://www.w3.org/TR/html4/">
+    <c:contacto xmlns:c="gato">
+        <c:nombre>Hajimi</c:nombre>
+        <c:telefono>333333333</c:telefono>
+        <c:email>manbo@miao.cat</c:email>
+    </c:contacto>
+
+    <lg:contacto xmlns:lg="LadyGaga">
+        <lg:nombre>Stefani Joanne Angelina Germanotta</lg:nombre>
+        <lg:telefono>03281986</lg:telefono>
+        <lg:email>summerbo1@artp0p.com</lg:email>
+    </lg:contacto>
+
+    <a:contacto xmlns:a="Apple.Inc">
+        <a:nombre>John Appleseeds</a:nombre>
+        <a:telefono>4085550125</a:telefono>
+        <a:email>j.appleseed@me.com</a:email>
+    </a:contacto>
+</agenda>
