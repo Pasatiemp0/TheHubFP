@@ -1,7 +1,10 @@
+/**
+ * @author Jiandong Yao
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class reto2EDCorregir {
+public class reto2EDCorregido_Jiandong_Yao {
     static Scanner teclado = new Scanner(System.in);
 
     public static int menu() {
