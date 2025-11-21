@@ -1,6 +1,6 @@
 /**
 *<p> Reto 2. Mensaje con Java </p>
-*@author：Jiandong_Yao(Alejandro)
+*@author: Jiandong_Yao(Alejandro)
 *
 */
 import java.util.Scanner;
