@@ -41,7 +41,7 @@ public class MensajeJava {
 
     public static String formatear(String textoOriginal, String posicion) {
         if (posicion.equals("NOMBRE")) {
-            return textoOriginal = textoOriginal.toUpperCase();
+            return textoOriginal = " " + textoOriginal.toUpperCase();
         } else {
             return textoOriginal = textoOriginal.substring(0, textoOriginal.indexOf(" ")).toLowerCase()
                     + textoOriginal.substring(textoOriginal.indexOf(" ")).toUpperCase();
@@ -57,7 +57,7 @@ public class MensajeJava {
     public static void main(String[] args) {
         String Nombre = solicitarNombre("Nombre");
         String Apellidos = solicitarNombre("Primer Apellido");
-        Apellidos += " " + solicitarNombre("Segundo Apellido((opcional)");
+        Apellidos += solicitarNombre("Segundo Apellido((opcional)");
 
         saludo(Nombre, Apellidos);
 
