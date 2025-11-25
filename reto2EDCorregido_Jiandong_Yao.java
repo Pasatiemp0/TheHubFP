@@ -25,7 +25,6 @@ public class reto2EDCorregido_Jiandong_Yao {
             } catch (InputMismatchException e) {
                 System.out.println("Debes introducir un numero valido correspondiente al Menú.");
                 teclado.next();
-                continue;
             }
 
             if ((opcion <= 4) && (opcion >= 0)) {
@@ -36,18 +35,28 @@ public class reto2EDCorregido_Jiandong_Yao {
     }
 
     public static int[] numeroInput(int seleccion) {
-        int n1, n2;
-        System.out.println("Introduce el primer numero de la operacion");
-        System.out.print("> ");
-        n1 = teclado.nextInt();
+        int n1 = 0;
+        int n2 = 0;
+        boolean idNum = false;
         do {
-            System.out.println("Introduce el segundo numero de la operacion");
+            try {
+            System.out.println("Introduce el primer numero de la operacion");
             System.out.print("> ");
-            n2 = teclado.nextInt();
-            if (seleccion == 4 && n2 == 0) {
-                System.out.println("No se puede dividir entre cero.");
+            n1 = teclado.nextInt();
+                do {
+                    System.out.println("Introduce el segundo numero de la operacion");
+                    System.out.print("> ");
+                    n2 = teclado.nextInt();
+                    if (seleccion == 4 && n2 == 0) {
+                        System.out.println("No se puede dividir entre cero.");
+                    }
+                } while (seleccion == 4 && n2 == 0);
+            idNum = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Debes introducir un numero valido.");
+                teclado.next();
             }
-        } while (seleccion == 4 && n2 == 0);
+        } while (!idNum);
 
         int[] valores = new int[] { n1, n2 };
         return valores;
@@ -105,3 +114,13 @@ public class reto2EDCorregido_Jiandong_Yao {
 
     }
 }
+
+/*opcion 
+do{
+    {menu();}
+    valores[0] = teclado.nextInt();
+    valores[1] = teclado.nextInt();
+    Double.isNaN();
+}
+while(opcion != 0) 
+*/
