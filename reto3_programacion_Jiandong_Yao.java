@@ -1,6 +1,11 @@
+/**
+ * @author: Jiandong_Yao(Alejandro)
+ * @info: reto3_programacion
+ */
+
 import java.util.Scanner;
 
-public class adivinaNumero {
+public class reto3_programacion_Jiandong_Yao {
     static Scanner input = new Scanner(System.in);
     
     public static void main(String[] args) {
@@ -33,7 +38,7 @@ public class adivinaNumero {
             System.out.print("Desenvaiana tu " + oportunidades + " numero > ");
             inputNum = input.nextInt();
             if (inputNum == numeroAleatorio){
-                System.out.println("\033\32mEnhorabuena, has adivinado el numero!\033[0m");
+                System.out.println("\033[32mEnhorabuena, has vencido el NUMERO OVERLORD!\033[0m");
                 adivinado = true;
             }else if (inputNum > numeroAleatorio) {
                 System.out.println("Tu numero es mayor, intenta a aplicar un toque más suave");
