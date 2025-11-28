@@ -9,13 +9,15 @@ h1, p {
 
 h1 {
     font-size: 4rem;
-    padding-top: 5rem;
+    padding-top: 8rem;
 }
-.bigger-text {
+.bigger-text {  
     font-size: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 .container {
-    background: url("img/nerv_window.svg");
+    background: url("img/nerv_window.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
