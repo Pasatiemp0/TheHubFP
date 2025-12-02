@@ -5,6 +5,7 @@ import java.util.Scanner;
 //ej  USD a GBP: 100 -> 72.72
 //100 USD 
 //100/0.8*1.1=137.5
+//arraylist<>
 
 public class Conversor_de_divisas {
     static double USD = 0.8;
@@ -43,12 +44,16 @@ public class Conversor_de_divisas {
         double inputUsuario;
         double divisa;
         ArrayList<String> registro =new ArrayList<String>();
+        System.out.println("taza cuardada");
+        System.out.println();
+        System.out.println("modificaion");
+        solicitudDivisa(tec.nextInt());
         System.out.println("taza actual");
 
         
         System.out.println("Monedas admitidas para la conversión: ");
         System.out.println("Euro, Yenes, Dólares, Libras.");
-        System.out.println("1. Euro, 2. Dólares, 3. Yenes, 4. Libras, 5. Ren Ming Bi");
+        System.out.println("1. Euro, 2. Yenes, 3. Dólares, 4. Libras, 5. Ren Ming Bi");
         divisa = solicitudDivisa(tec.nextInt());
         System.out.println("Cantidad");
         divisa = tec.nextInt()/tec.nextDouble();
