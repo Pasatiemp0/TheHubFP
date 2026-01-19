@@ -3,23 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KOBU - Curated Hotels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KOBU clone project</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- 自定义样式 -->
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ========== 导航栏 ========== -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
 
-            <!-- 左侧下拉菜单 -->
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     MENU
@@ -33,17 +30,28 @@
                 </ul>
             </div>
 
-            <!-- 中间Logo -->
-            <a class="navbar-brand mx-auto" href="#">
+            <a class="navbar-brand mx-auto" href="https://kobu.co/">
                 <img src="Wordmark.svg" alt="KOBU" width="95" height="24">
             </a>
 
-            <!-- 右侧占位 (保持Logo居中) -->
             <div style="width: 80px;"></div>
         </div>
     </nav>
 
-    <!-- ========== 英雄区 ========== -->
+    <div class="loader">
+        <div class="container-fluid">
+            <div class="row">
+                <img src="Wordmark_KOBU-1024x259.png"></img>
+            </div>
+            <div class="row">
+                <p>HAND-PICKED SPACES TO BOOK & TO BUY</p>
+            </div>
+            <div class="row">
+                <img src="SCORPIOS-BODRUM_by_Georg-Roske_Bungalow-04_15797_HighRes-2000x1360.jpg"></img>
+            </div>
+        </div>
+    </div>
+
     <section class="hero">
         <div class="container">
             <h1>Explore curated hotels</h1>
@@ -51,12 +59,10 @@
         </div>
     </section>
 
-    <!-- ========== 卡片区 ========== -->
     <section class="cards-section">
         <div class="container">
             <div class="row">
 
-                <!-- Hotels 卡片 -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="hotel.jpg" class="card-img-top" alt="Hotels">
@@ -66,7 +72,6 @@
                     </div>
                 </div>
 
-                <!-- Villas 卡片 -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="villa.jpg" class="card-img-top" alt="Villas">
@@ -76,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- Retreats 卡片 -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="retreat.jpg" class="card-img-top" alt="Retreats">
@@ -90,15 +94,12 @@
         </div>
     </section>
 
-    <!-- ========== 页脚 ========== -->
     <footer>
         <div class="container">
-            <!-- Logo (白色版本，这里用文字代替) -->
             <div class="logo">
                 <img src="Wordmark.svg" alt="KOBU" width="80" style="filter: invert(1);">
             </div>
 
-            <!-- 链接 -->
             <div>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
