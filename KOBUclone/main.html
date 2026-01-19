@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KOBU - Curated Hotels</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 自定义样式 -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========== 导航栏 ========== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <!-- 左侧下拉菜单 -->
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    MENU
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Hotels</a></li>
+                    <li><a class="dropdown-item" href="#">Villas</a></li>
+                    <li><a class="dropdown-item" href="#">Retreats</a></li>
+                    <li><a class="dropdown-item" href="#">Properties</a></li>
+                    <li><a class="dropdown-item" href="#">Journal</a></li>
+                </ul>
+            </div>
+
+            <!-- 中间Logo -->
+            <a class="navbar-brand mx-auto" href="#">
+                <img src="Wordmark.svg" alt="KOBU" width="95" height="24">
+            </a>
+
+            <!-- 右侧占位 (保持Logo居中) -->
+            <div style="width: 80px;"></div>
+        </div>
+    </nav>
+
+    <!-- ========== 英雄区 ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>Explore curated hotels</h1>
+            <p>Handpicked boutique hotels and unique stays around the world</p>
+        </div>
+    </section>
+
+    <!-- ========== 卡片区 ========== -->
+    <section class="cards-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- Hotels 卡片 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="hotel.jpg" class="card-img-top" alt="Hotels">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotels</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Villas 卡片 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="villa.jpg" class="card-img-top" alt="Villas">
+                        <div class="card-body">
+                            <h5 class="card-title">Villas</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retreats 卡片 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="retreat.jpg" class="card-img-top" alt="Retreats">
+                        <div class="card-body">
+                            <h5 class="card-title">Retreats</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 页脚 ========== -->
+    <footer>
+        <div class="container">
+            <!-- Logo (白色版本，这里用文字代替) -->
+            <div class="logo">
+                <img src="Wordmark.svg" alt="KOBU" width="80" style="filter: invert(1);">
+            </div>
+
+            <!-- 链接 -->
+            <div>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
