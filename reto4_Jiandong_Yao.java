@@ -15,7 +15,10 @@ public class reto4_Jiandong_Yao {
         do {
             for (int counter = 0; counter < 3; counter++) {
                 int randomIndex = (int) (Math.random() * 3);
-                pile[randomIndex] ^= pile[counter];
+                if (randomIndex == counter) {
+                    continue;
+                }
+                pile[randomIndex] ^= pile[counter]; 
                 pile[counter] ^= pile[randomIndex];
                 pile[randomIndex] ^= pile[counter];
             }
