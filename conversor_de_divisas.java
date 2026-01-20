@@ -1,6 +1,6 @@
 /**
  * <p> Proyecto Programación 
- * @author: César Bailon; Estefan ; Jiandong Yao(Alejandro)
+ * @author: César Bailon; Estefan Coleschenco; Jiandong Yao(Alejandro)
  * 
  * {@code \033[**m} marcador de color de texto en consola,
  * los valores representan @param ** {31=rojo, 32=verde, 0=reset},
