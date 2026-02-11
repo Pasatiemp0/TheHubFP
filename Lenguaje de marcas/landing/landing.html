@@ -5,120 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Landing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
   <body>
-    <h1>Landing Page</h1>
+    <h1 id="head"></h1>
     <!--TODO@navbar: Inicio, Características, Contacto-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <i class="bi bi-apple" aria-hidden="true"></i>
+            <a class="navbar-brand" href="#" class="navbar"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    <a class="nav-link" href="#">Características</a>
+                    <a class="nav-link" href="#caracter">Características</a>
                     <a class="nav-link" href="#">Contacto</a>
                 </div>
             </div>
         </div>
     </nav>
     <!--TODO@hero: titular, botón-->
+
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold" align="center">The Art of Loving</h1>
+        <p class="col-md-8 fs-4" align="justify">
+            La continuación de Messy, el álbum de Olivia Dean publicado en 2023, sugiere que ella es todo lo contrario. Desde la alegre «Nice to Each Other», ideal para la radio, hasta el soul arrebatador de «So Easy (To Fall in Love)», que recuerda a Dionne Warwick a finales de los 60, The Art of Loving muestra a una Dean segura de sí misma que se mueve con soltura entre el R&B y el pop. «Puedes hacer lo que quieras, no hay reglas y eso es una sensación muy liberadora», le dice a Rebecca Judd, de Apple Music.
+
+Dean describe sus composiciones en The Art of Loving como «reales, frescas y honestas», y hace que parezca muy fácil. No es de extrañar que el tema general, el amor en sus diferentes formas, surgiera de forma natural. «El título me vino bastante rápido», afirma. «Siempre me ha fascinado el amor. Es lo único que todo el mundo busca en su vida de alguna manera, ya sea en la amistad, la familia o el amor romántico, pero es algo que no nos enseñan. En el colegio no hay una asignatura sobre el amor. Es algo mágico que se supone que debemos saber hacer. Así que quise analizarlo más detenidamente y ver qué significa para mí y el arte que hay en ello, el arte de amar a alguien correctamente».
+
+El álbum comienza con el éxito instantáneo «Nice to Each Other», la elección obvia para Dean. «En cuanto la escribí, supe que iba a ser la primera canción. Tiene un toque de guitarra al estilo Fleetwood Mac y es descarada, coqueta», afirma. Puede que haya desengaños y momentos melancólicos en el camino, pero Dean no deja lugar a dudas de que se encuentra en un momento feliz. «¿Cómo no iba a estarlo?», dice. «He estado pensando mucho en la gira y en lo que quiero cantar en directo, y quiero que sea alegre. Así que me he ido acercando a la alegría».
+        </p>
+        <div class="text-center">
+            <a href="#caracter" class="btn btn-primary btn-lg" type="button">Saber más</a>
+        </div>
+    </div>
     <!--TODO@caracter: 3/4 card in grid -->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="caracter">
         <div class="col">
             <div class="card h-100">
                 <img src="img/Jiandong_Yao_Mr_Chapman.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Característica producto</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">
+                        Man I Need
+                    </h5>
+                    <p class="card-text">
+                        Lontitud: 3:15
+                        
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">Olivia Dean • 26 Septiembre 2025</small>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="img/Jiandong_Yao_Mr_Chapman.jpeg" class="card-img-top" alt="...">
+                <img src="img/Valarie.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Close Up</h5>
+                    <p class="card-text">Lontitud: 3:15</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">Olivia Dean • 26 Septiembre 2025</small>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100">
-                <img src="img/Jiandong_Yao_Mr_Chapman.jpeg" class="card-img-top" alt="...">
+                <img src="img/YOOHOO.gif" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <h5 class="card-title">So Easy(To Fall In Love)</h5>
+                    <p class="card-text">Lontitud: 2:49</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">Olivia Dean • 26 Septiembre 2025</small>
                 </div>
             </div>
         </div>
     </div>
     <!--TODO@q&a: alert, badge, modal in question-->
+    
     <!--TODO@form: Nombre, Email y Mensaje-->
-    <div class="mb-3">
-        <label for="formGroupNameInput" class="form-label">Nombre</label>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-        </div>
-    </div>
-    <div class="mb-3">
-        <label for="formGroupEmailInput" class="form-label">Email</label>
-            <div class="col-auto">
-                <label class="visually-hidden" for="autoSizingInput">Name</label>
-                <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
-        </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInputGroup">Nombre de usuario</label>
-            <div class="input-group">
-                <div class="input-group-text">@</div>
-                    <select class="form-select" id="autoSizingSelect">
-                        <option selected>Selecionar correo</option>
-                        <option value="1">gmail.com</option>
-                        <option value="2">steam.thehubfp.es</option>
-                        <option value="3">unizar.es</option>
-                    </select>
+    <form class="row g-3" novalidate>
+        <div class="mb-3">
+            <label for="formGroupNameInput" class="form-label">Nombre</label>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
             </div>
         </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
-            
+        <div class="mb-3">
+            <label for="formGroupEmailInput" class="form-label">Email</label>
+                <div class="col-auto">
+                    <label class="visually-hidden" for="autoSizingInput">Name</label>
+                    <input type="text" class="form-control" id="autoSizingInput" placeholder="xxxxxx">
+            </div>
+            <div class="col-auto">
+                <label class="visually-hidden" for="autoSizingInputGroup">Nombre de usuario</label>
+                <div class="input-group">
+                    <div class="input-group-text">@</div>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Selecionar correo</option>
+                            <option value="1">gmail.com</option>
+                            <option value="2">steam.thehubfp.es</option>
+                            <option value="3">unizar.es</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                
+            </div>
         </div>
-    </div>
+    </form>
     <!--TODO@footer-->
     <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">Home</a>
+                    <a href="#head" class="nav-link px-2 text-muted">Principal</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">Features</a>
+                    <a href="https://music.apple.com/es/artist/olivia-dean/1487253329?l=en-GB" class="nav-link px-2 text-muted">Cantante</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">FAQs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link px-2 text-muted">About</a>
+                    <a href="https://music.apple.com/es/album/the-art-of-loving/1817609404?l=en-GB" class="nav-link px-2 text-muted">Disco</a>
                 </li>
             </ul>
-        <p class="text-center text-muted">© 2023 Company, Inc</p>
+        <p class="text-center text-muted">© 2026 Jiandong Yao(Alejandro) | Lenguaje de Marcas(reto 4) | All rights reserved</p>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
