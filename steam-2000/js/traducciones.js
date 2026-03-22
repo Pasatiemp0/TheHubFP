@@ -1,180 +1,46 @@
-// traducciones.js - Textos de la aplicación en español e inglés
+// traducciones.js - Textos en español e inglés
+// Solo traducimos la navbar, el footer y unos pocos textos que cambia el JS
 
-// Recuperamos el idioma guardado en localStorage, o "es" por defecto
-let idiomaActual = localStorage.getItem("idioma") || "es";
+// Idioma guardado en localStorage, o "es" por defecto
+var idiomaActual = localStorage.getItem("idioma") || "es";
 
-// Objeto con todas las traducciones organizadas por idioma
-const textos = {
+// Objeto con las traducciones (solo las esenciales)
+var textos = {
     es: {
-        // Navbar
         tienda: "Tienda",
         inventario: "Inventario",
         login: "Iniciar Sesión",
         registro: "Registrarse",
+        salir: "Salir",
         modoOscuro: "Modo oscuro",
-
-        // Banner de la tienda
-        bienvenida: "Bienvenido a Steam",
-        subtituloBanner: "Las mejores ofertas en juegos para PC",
-
-        // Controles de la tienda
-        vistaCards: "Tarjetas",
-        vistaLista: "Lista",
-        cargarMas: "Cargar más juegos",
-
-        // Tarjetas y lista de juegos
         verDetalles: "Ver detalles",
-        oferta: "¡Oferta!",
-
-        // Detalle del juego
-        volverTienda: "Volver a la tienda",
-        desarrollador: "Desarrollador",
-        anio: "Año",
-        genero: "Género",
-        plataformas: "Plataformas",
-        precio: "Precio",
-        valoracion: "Valoración",
-        añadirInventario: "Añadir al inventario",
-        juegoNoEncontrado: "No se encontró el juego con id",
-        yaEnInventario: "Este juego ya está en tu inventario.",
-        añadidoAlInventario: "¡Juego añadido al inventario correctamente!",
-
-        // Inventario
         miInventario: "Mi Inventario",
-        inventarioVacio: "Tu inventario está vacío. ¡Visita la tienda!",
-        irTienda: "Ir a la tienda",
-        imagen: "Imagen",
-        titulo: "Título",
-        acciones: "Acciones",
         eliminar: "Eliminar",
-        totalJuegos: "Total de juegos",
-        valorTotal: "Valor total",
-
-        // Login
-        loginTitulo: "Iniciar Sesión en Steam",
-        usuarioEmail: "Usuario o Email",
-        placeholderUsuario: "Introduce tu usuario o email",
-        errorUsuario: "Por favor, introduce tu usuario o email.",
-        contrasena: "Contraseña",
-        placeholderContrasena: "Introduce tu contraseña",
-        errorContrasena: "Por favor, introduce tu contraseña.",
-        recordarme: "Recordarme",
-        botonLogin: "Iniciar Sesión",
-        noTienesCuenta: "¿No tienes cuenta?",
-        registrate: "Regístrate",
-        bienvenidoUsuario: "¡Bienvenido,",
-        redirigiendo: "Redirigiendo a la tienda...",
-
-        // Registro
-        registroTitulo: "Crear cuenta en Steam",
-        nombreUsuario: "Nombre de usuario",
-        placeholderNombre: "Elige un nombre de usuario",
-        errorNombre: "Por favor, introduce un nombre de usuario.",
-        email: "Email",
-        placeholderEmail: "ejemplo@correo.com",
-        errorEmail: "Por favor, introduce un email válido (debe contener @).",
-        placeholderCrearContrasena: "Crea una contraseña",
-        confirmarContrasena: "Confirmar contraseña",
-        placeholderConfirmar: "Repite la contraseña",
-        errorContrasenaNoCoincide: "Las contraseñas no coinciden.",
-        aceptarTerminos: "Acepto los términos y condiciones",
-        errorTerminos: "Debes aceptar los términos y condiciones.",
-        botonCrearCuenta: "Crear cuenta",
-        yaTienesCuenta: "¿Ya tienes cuenta?",
-        iniciaSesion: "Inicia sesión",
-        cuentaCreada: "¡Cuenta creada con éxito! Redirigiendo al inicio de sesión...",
-
-        // Footer
+        cargarMas: "Cargar más",
+        inventarioVacio: "Tu inventario está vacío.",
+        añadidoAlInventario: "¡Juego añadido al inventario!",
+        yaEnInventario: "Este juego ya está en tu inventario.",
         footer: "Steam Store © 2000 - Proyecto Lenguajes de Marca"
     },
     en: {
-        // Navbar
         tienda: "Store",
         inventario: "Inventory",
         login: "Sign In",
         registro: "Sign Up",
+        salir: "Sign Out",
         modoOscuro: "Dark mode",
-
-        // Banner de la tienda
-        bienvenida: "Welcome to Steam",
-        subtituloBanner: "The best deals on PC games",
-
-        // Controles de la tienda
-        vistaCards: "Cards",
-        vistaLista: "List",
-        cargarMas: "Load more games",
-
-        // Tarjetas y lista de juegos
         verDetalles: "View details",
-        oferta: "Sale!",
-
-        // Detalle del juego
-        volverTienda: "Back to store",
-        desarrollador: "Developer",
-        anio: "Year",
-        genero: "Genre",
-        plataformas: "Platforms",
-        precio: "Price",
-        valoracion: "Rating",
-        añadirInventario: "Add to inventory",
-        juegoNoEncontrado: "Game not found with id",
-        yaEnInventario: "This game is already in your inventory.",
-        añadidoAlInventario: "Game added to inventory successfully!",
-
-        // Inventario
         miInventario: "My Inventory",
-        inventarioVacio: "Your inventory is empty. Visit the store!",
-        irTienda: "Go to store",
-        imagen: "Image",
-        titulo: "Title",
-        acciones: "Actions",
         eliminar: "Remove",
-        totalJuegos: "Total games",
-        valorTotal: "Total value",
-
-        // Login
-        loginTitulo: "Sign In to Steam",
-        usuarioEmail: "Username or Email",
-        placeholderUsuario: "Enter your username or email",
-        errorUsuario: "Please enter your username or email.",
-        contrasena: "Password",
-        placeholderContrasena: "Enter your password",
-        errorContrasena: "Please enter your password.",
-        recordarme: "Remember me",
-        botonLogin: "Sign In",
-        noTienesCuenta: "Don't have an account?",
-        registrate: "Sign Up",
-        bienvenidoUsuario: "Welcome,",
-        redirigiendo: "Redirecting to store...",
-
-        // Registro
-        registroTitulo: "Create Steam Account",
-        nombreUsuario: "Username",
-        placeholderNombre: "Choose a username",
-        errorNombre: "Please enter a username.",
-        email: "Email",
-        placeholderEmail: "example@mail.com",
-        errorEmail: "Please enter a valid email (must contain @).",
-        placeholderCrearContrasena: "Create a password",
-        confirmarContrasena: "Confirm password",
-        placeholderConfirmar: "Repeat your password",
-        errorContrasenaNoCoincide: "Passwords do not match.",
-        aceptarTerminos: "I accept the terms and conditions",
-        errorTerminos: "You must accept the terms and conditions.",
-        botonCrearCuenta: "Create account",
-        yaTienesCuenta: "Already have an account?",
-        iniciaSesion: "Sign In",
-        cuentaCreada: "Account created successfully! Redirecting to sign in...",
-
-        // Footer
+        cargarMas: "Load more",
+        inventarioVacio: "Your inventory is empty.",
+        añadidoAlInventario: "Game added to inventory!",
+        yaEnInventario: "This game is already in your inventory.",
         footer: "Steam Store © 2000 - Markup Languages Project"
     }
 };
 
-/**
- * Devuelve el texto traducido para la clave indicada.
- * Si no encuentra la clave, devuelve la propia clave como fallback.
- */
+// Devuelve el texto en el idioma actual
 function t(clave) {
     if (textos[idiomaActual] && textos[idiomaActual][clave]) {
         return textos[idiomaActual][clave];
@@ -182,10 +48,7 @@ function t(clave) {
     return clave;
 }
 
-/**
- * Devuelve la etiqueta de categoría en el idioma actual.
- * Usa label_es o label_en según el idioma seleccionado.
- */
+// Devuelve la etiqueta de una categoria en el idioma actual
 function labelCategoria(categoria) {
     if (idiomaActual === "en") {
         return categoria.label_en;
@@ -193,71 +56,58 @@ function labelCategoria(categoria) {
     return categoria.label_es;
 }
 
-/**
- * Cambia el idioma de la aplicación.
- * Guarda el idioma en localStorage y recarga la página
- * para que todos los textos se actualicen.
- */
+// Cambia el idioma, lo guarda y recarga la pagina
 function cambiarIdioma(nuevoIdioma) {
-    // Actualizamos el idioma actual
-    idiomaActual = nuevoIdioma;
-
-    // Guardamos el idioma en localStorage para que persista entre páginas
     localStorage.setItem("idioma", nuevoIdioma);
-
-    // Actualizamos la configuración en memoria
-    if (configuracion.app) {
-        configuracion.app.language = nuevoIdioma;
-    }
-
-    // Recargamos la página para que todos los textos se regeneren
     location.reload();
 }
 
-/**
- * Actualiza los textos de la navbar según el idioma actual.
- * Identifica cada enlace por su atributo data-seccion.
- * Mantiene el nombre del usuario si está logueado.
- */
+// Actualiza los textos de la navbar segun el idioma
 function actualizarNavbarIdioma() {
-    // Buscamos los enlaces que tengan el atributo data-seccion
-    const enlaces = document.querySelectorAll(".navbar-nav [data-seccion]");
+    var enlaces = document.querySelectorAll(".navbar-nav [data-seccion]");
+    var usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    // Comprobamos si hay un usuario logueado
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-
-    enlaces.forEach(function (enlace) {
-        // Leemos el valor del atributo data-seccion
-        const seccion = enlace.getAttribute("data-seccion");
+    for (var i = 0; i < enlaces.length; i++) {
+        var seccion = enlaces[i].getAttribute("data-seccion");
 
         if (seccion === "tienda") {
-            enlace.textContent = t("tienda");
+            enlaces[i].textContent = t("tienda");
         } else if (seccion === "inventario") {
-            enlace.textContent = t("inventario");
+            enlaces[i].textContent = t("inventario");
         } else if (seccion === "login") {
-            // Si el usuario está logueado, mostramos su nombre
+            // Si hay usuario logueado, mostramos su nombre
             if (usuario && usuario.logueado) {
-                enlace.textContent = usuario.nombre;
+                enlaces[i].textContent = usuario.nombre;
+                enlaces[i].href = "#";
             } else {
-                enlace.textContent = t("login");
+                enlaces[i].textContent = t("login");
             }
         } else if (seccion === "registro") {
-            enlace.textContent = t("registro");
+            // Si hay usuario logueado, mostramos "Salir"
+            if (usuario && usuario.logueado) {
+                enlaces[i].textContent = t("salir");
+                enlaces[i].href = "#";
+                enlaces[i].onclick = function () {
+                    localStorage.removeItem("usuario");
+                    location.reload();
+                    return false;
+                };
+            } else {
+                enlaces[i].textContent = t("registro");
+            }
         }
-    });
+    }
 
-    // Actualizamos la etiqueta del switch de tema
-    const labelTema = document.querySelector("label[for='themeSwitch']");
+    // Etiqueta del switch de tema
+    var labelTema = document.querySelector("label[for='themeSwitch']");
     if (labelTema) {
         labelTema.textContent = t("modoOscuro");
     }
 }
 
-/**
- * Actualiza el texto del footer según el idioma actual.
- */
+// Actualiza el texto del footer
 function actualizarFooterIdioma() {
-    const footer = document.querySelector("footer p");
+    var footer = document.querySelector("footer p");
     if (footer) {
         footer.textContent = t("footer");
     }

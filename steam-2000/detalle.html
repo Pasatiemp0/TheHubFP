@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steam Store 2000 - Tienda</title>
+    <title>Steam Store 2000 - Detalle</title>
 
-    <!-- Bootstrap 5 CSS (CDN) -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- js-yaml para leer archivos YAML (CDN) -->
+    <!-- js-yaml para leer YAML -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
-    <!-- Nuestros estilos personalizados (estética retro Steam 2002) -->
+    <!-- Nuestros estilos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- ===================== NAVBAR (idéntica en todas las páginas) ===================== -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-
-            <!-- Logo STEAM con estilo industrial -->
             <a class="navbar-brand fw-bold" href="index.html">STEAM</a>
-
-            <!-- Botón hamburguesa para móviles -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Enlaces de navegación -->
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Cada enlace tiene data-seccion para que traducciones.js lo identifique -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html" data-seccion="tienda">Tienda</a>
                     </li>
@@ -45,70 +38,34 @@
                         <a class="nav-link" href="registro.html" data-seccion="registro" id="nav-registro">Registrarse</a>
                     </li>
                 </ul>
-
-                <!-- Selector de idioma -->
                 <select id="selector-idioma" class="form-select form-select-sm w-auto me-3">
                     <option value="es">ES</option>
                     <option value="en">EN</option>
                 </select>
-
-                <!-- Switch para cambiar entre tema claro y oscuro -->
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="themeSwitch" checked>
                     <label class="form-check-label text-light" for="themeSwitch">Modo oscuro</label>
                 </div>
             </div>
-
         </div>
     </nav>
 
-    <!-- ===================== CONTENIDO PRINCIPAL - TIENDA ===================== -->
-    <main id="app" class="container my-4">
-
-        <!-- Banner de bienvenida -->
-        <div class="bg-dark text-light p-4 mb-4 rounded text-center">
-            <h1 id="banner-titulo">Bienvenido a Steam</h1>
-            <p id="banner-subtitulo" class="mb-0">Las mejores ofertas en juegos para PC</p>
-        </div>
-
-        <!-- Barra de filtros -->
-        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-
-            <!-- Select para filtrar por género (las opciones se llenan desde JS) -->
-            <select id="filtro-genero" class="form-select w-auto">
-                <option value="all">Todos</option>
-            </select>
-
-            <!-- Botones para cambiar entre vista tarjetas y lista -->
-            <div class="btn-group" role="group">
-                <button id="btn-vista-cards" type="button" class="btn btn-primary">Tarjetas</button>
-                <button id="btn-vista-list" type="button" class="btn btn-outline-primary">Lista</button>
-            </div>
-        </div>
-
-        <!-- Contenedor donde se mostrarán los juegos (se llena por JS) -->
-        <div id="lista-juegos"></div>
-
-        <!-- Contenedor para el botón de cargar más (se llena por JS) -->
-        <div id="paginacion" class="text-center mt-4"></div>
-
+    <!-- CONTENIDO - DETALLE DEL JUEGO -->
+    <main class="container my-4">
+        <div id="detalle-juego"></div>
     </main>
 
-    <!-- ===================== FOOTER (idéntico en todas las páginas) ===================== -->
+    <!-- FOOTER -->
     <footer class="text-center py-3 mt-4">
         <p class="mb-0">Steam Store &copy; 2000 - Proyecto Lenguajes de Marca</p>
     </footer>
 
-    <!-- ===================== SCRIPTS ===================== -->
-
-    <!-- Bootstrap 5 JS Bundle (CDN) -->
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Nuestros scripts (orden importante) -->
     <script src="js/traducciones.js"></script>
     <script src="js/dataLoader.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/tienda.js"></script>
+    <script src="js/detalle.js"></script>
 
 </body>
 </html>
