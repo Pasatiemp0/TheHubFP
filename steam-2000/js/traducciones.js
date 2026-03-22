@@ -1,7 +1,7 @@
 // traducciones.js - Textos de la aplicación en español e inglés
 
-// Variable global para el idioma actual (por defecto español)
-let idiomaActual = "es";
+// Recuperamos el idioma guardado en localStorage, o "es" por defecto
+let idiomaActual = localStorage.getItem("idioma") || "es";
 
 // Objeto con todas las traducciones organizadas por idioma
 const textos = {
@@ -195,52 +195,53 @@ function labelCategoria(categoria) {
 
 /**
  * Cambia el idioma de la aplicación.
- * Actualiza la configuración, la navbar, el footer y la sección actual.
+ * Guarda el idioma en localStorage y recarga la página
+ * para que todos los textos se actualicen.
  */
 function cambiarIdioma(nuevoIdioma) {
     // Actualizamos el idioma actual
     idiomaActual = nuevoIdioma;
 
-    // Actualizamos la configuración
+    // Guardamos el idioma en localStorage para que persista entre páginas
+    localStorage.setItem("idioma", nuevoIdioma);
+
+    // Actualizamos la configuración en memoria
     if (configuracion.app) {
         configuracion.app.language = nuevoIdioma;
     }
 
-    // Actualizamos los textos de la navbar
-    actualizarNavbarIdioma();
-
-    // Actualizamos el footer
-    actualizarFooterIdioma();
-
-    // Volvemos a renderizar la sección actual
-    navegar();
+    // Recargamos la página para que todos los textos se regeneren
+    location.reload();
 }
 
 /**
  * Actualiza los textos de la navbar según el idioma actual.
+ * Identifica cada enlace por su atributo data-seccion.
  * Mantiene el nombre del usuario si está logueado.
  */
 function actualizarNavbarIdioma() {
-    const enlaces = document.querySelectorAll(".navbar-nav .nav-link");
+    // Buscamos los enlaces que tengan el atributo data-seccion
+    const enlaces = document.querySelectorAll(".navbar-nav [data-seccion]");
 
     // Comprobamos si hay un usuario logueado
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
     enlaces.forEach(function (enlace) {
-        const href = enlace.getAttribute("href");
+        // Leemos el valor del atributo data-seccion
+        const seccion = enlace.getAttribute("data-seccion");
 
-        if (href === "#tienda") {
+        if (seccion === "tienda") {
             enlace.textContent = t("tienda");
-        } else if (href === "#inventario") {
+        } else if (seccion === "inventario") {
             enlace.textContent = t("inventario");
-        } else if (href === "#login") {
+        } else if (seccion === "login") {
             // Si el usuario está logueado, mostramos su nombre
             if (usuario && usuario.logueado) {
                 enlace.textContent = usuario.nombre;
             } else {
                 enlace.textContent = t("login");
             }
-        } else if (href === "#registro") {
+        } else if (seccion === "registro") {
             enlace.textContent = t("registro");
         }
     });

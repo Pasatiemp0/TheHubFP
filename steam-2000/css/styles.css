@@ -1,233 +1,461 @@
-/* styles.css - Estilos principales de Steam 2000 */
+/* styles.css - Estilos Steam 2002-2003 (estética retro original) */
 
 /* ===================== VARIABLES CSS ===================== */
 
-/* Tema oscuro (por defecto) - Paleta clásica de Steam */
+/* Tema oscuro (por defecto) - Paleta original de Steam 2002 */
 body.tema-oscuro {
-    --color-fondo: #1b2838;
-    --color-fondo-secundario: #2a475e;
-    --color-texto: #c7d5e0;
-    --color-texto-secundario: #8f98a0;
-    --color-acento: #66c0f4;
-    --color-acento-verde: #4fc978;
-    --color-navbar: #171a21;
-    --color-tarjeta: #213345;
-    --color-borde: #2a475e;
-    --color-footer: #171a21;
+    --color-fondo: #3b3b3b;                /* Gris oscuro de fondo general */
+    --color-fondo-secundario: #4a5942;     /* Verde oliva para secciones */
+    --color-texto: #d2d2d2;               /* Gris claro para texto */
+    --color-texto-secundario: #8a9b6e;    /* Verde apagado para texto secundario */
+    --color-acento: #98bf0c;              /* Verde lima Steam (color estrella) */
+    --color-acento-hover: #7ea519;        /* Verde lima más oscuro al pasar el ratón */
+    --color-navbar: #4a5942;              /* Verde oliva oscuro para la barra */
+    --color-tarjeta: #2e2e2e;            /* Gris muy oscuro para tarjetas */
+    --color-borde: #5c6b4c;              /* Verde grisáceo para bordes */
+    --color-footer: #2e2e2e;             /* Gris oscuro para el pie de página */
+
+    /* Colores extra para efecto biselado (estilo Windows 2000) */
+    --color-bisel-claro: #7a8c6a;        /* Borde superior/izquierdo (claro) */
+    --color-bisel-oscuro: #2a3224;       /* Borde inferior/derecho (oscuro) */
+    --color-input-fondo: #1e1e1e;        /* Fondo de los campos de formulario */
 }
 
-/* Tema claro */
+/* Tema claro - Estilo Windows 2000 / escritorio clásico */
 body.tema-claro {
-    --color-fondo: #e5e5e5;
-    --color-fondo-secundario: #ffffff;
-    --color-texto: #1b2838;
-    --color-texto-secundario: #556772;
-    --color-acento: #1a9fff;
-    --color-acento-verde: #4fc978;
-    --color-navbar: #2a475e;
-    --color-tarjeta: #ffffff;
-    --color-borde: #c7d5e0;
-    --color-footer: #2a475e;
+    --color-fondo: #d4d0c8;              /* Gris beige clásico de Windows 2000 */
+    --color-fondo-secundario: #bdb9ad;   /* Gris más oscuro para secciones */
+    --color-texto: #1a1a1a;              /* Texto casi negro */
+    --color-texto-secundario: #4a5942;   /* Verde oliva para texto secundario */
+    --color-acento: #5c7e10;             /* Verde oscuro Steam */
+    --color-acento-hover: #4a6600;       /* Verde aún más oscuro al hover */
+    --color-navbar: #5c7e10;             /* Verde para la barra de navegación */
+    --color-tarjeta: #c8c4b8;           /* Gris beige claro para tarjetas */
+    --color-borde: #808080;              /* Gris medio para bordes */
+    --color-footer: #bdb9ad;             /* Gris para el pie de página */
+
+    /* Bisel estilo Windows 2000 claro */
+    --color-bisel-claro: #ffffff;
+    --color-bisel-oscuro: #808080;
+    --color-input-fondo: #ffffff;
 }
 
 /* ===================== ESTILOS GENERALES ===================== */
 
-/* Aplicamos las variables al body */
+/* Reset retro: todo cuadrado, sin bordes redondeados */
+* {
+    border-radius: 0 !important;
+}
+
+/* Cuerpo con tipografía Verdana pequeña (estilo 2002) */
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    /* Transición suave al cambiar de tema */
-    transition: background-color 0.3s, color 0.3s;
-    /* Fuente del sistema para un look limpio */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    /* Patrón sutil de pixeles para textura retro */
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEklEQVQIW2NkYPj/n4EBFAAAlwMF/tIgOfIAAAAASUVORK5CYII=");
+}
+
+/* Links estilo retro: sin subrayado, se subrayan al hover */
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-acento-hover);
+    text-decoration: underline;
 }
 
 /* ===================== NAVBAR ===================== */
 
-/* Fondo sólido oscuro con borde inferior sutil */
+/* Barra de navegación con degradado verde y efecto biselado */
 .navbar {
-    background-color: var(--color-navbar) !important;
-    border-bottom: 2px solid var(--color-acento);
+    background: linear-gradient(to bottom, #5c7e10, #4a5942) !important;
+    border-top: 1px solid var(--color-bisel-claro);
+    border-bottom: 2px solid #2a3224;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-height: auto;
 }
 
-/* Color del logo/marca */
+/* Logo STEAM con estilo industrial */
 .navbar-brand {
-    color: var(--color-acento) !important;
-    letter-spacing: 3px;
-    font-size: 1.4rem;
+    color: #ffffff !important;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #2a3224;
 }
 
-/* Enlaces de la navbar */
+/* Enlaces de la navbar en mayúsculas y pequeños */
 .navbar-nav .nav-link {
-    color: var(--color-texto) !important;
-    transition: color 0.2s;
+    color: #d2d2d2 !important;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px !important;
 }
 
-/* Hover en los enlaces de la navbar */
+/* Hover en enlaces: verde lima */
 .navbar-nav .nav-link:hover {
-    color: var(--color-acento) !important;
+    color: #98bf0c !important;
+    text-decoration: underline;
+}
+
+/* Icono hamburguesa para móviles */
+.navbar-toggler {
+    border: 1px solid var(--color-bisel-claro) !important;
 }
 
 /* ===================== BANNER ===================== */
 
-/* Banner de bienvenida con fondo secundario */
+/* Banner de bienvenida estilo Steam 2002 */
 .bg-dark.text-light.p-4.mb-4.rounded {
-    background-color: var(--color-fondo-secundario) !important;
+    background: linear-gradient(to bottom, #4a5942, #3b3b3b) !important;
     border: 1px solid var(--color-borde);
+    border-top-color: var(--color-bisel-claro);
+    border-left-color: var(--color-bisel-claro);
+}
+
+.bg-dark.text-light.p-4.mb-4.rounded h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #98bf0c;
+}
+
+.bg-dark.text-light.p-4.mb-4.rounded p {
+    font-size: 11px;
+    color: #8a9b6e;
 }
 
 /* ===================== TARJETAS DE JUEGOS ===================== */
 
-/* Estilo base de las tarjetas */
+/* Tarjetas planas y cuadradas (sin sombras, sin border-radius) */
 .card {
     background-color: var(--color-tarjeta) !important;
-    border: 1px solid var(--color-borde);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--color-borde) !important;
+    transition: border-color 0.15s;
+    /* Sin sombras ni transformaciones - estilo plano 2002 */
+    box-shadow: none !important;
+    /* Posición relativa para la cinta de oferta */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Efecto hover: leve elevación y sombra */
+/* Hover: solo cambia el borde a verde lima */
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    border-color: var(--color-acento);
+    border-color: var(--color-acento) !important;
+    transform: none;
+    box-shadow: none !important;
 }
 
-/* Título de la tarjeta */
+/* Texto del cuerpo de la tarjeta */
+.card-body {
+    padding: 8px !important;
+}
+
+/* Título de la tarjeta en verde lima */
 .card-title {
+    color: var(--color-acento);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Texto de precio */
+.card-text.fw-bold {
     color: var(--color-acento);
 }
 
 /* ===================== ESTRELLAS DE RATING ===================== */
 
-/* Color dorado para las estrellas */
+/* Color dorado/verde lima para las estrellas (estilo Steam) */
 .text-warning {
-    color: #f5c518 !important;
-    letter-spacing: 2px;
+    color: #c6b728 !important;
+    letter-spacing: 1px;
+    font-size: 12px;
 }
 
-/* ===================== BADGE DE OFERTA ===================== */
+/* ===================== CINTA DE OFERTA ===================== */
 
-/* Badge llamativo para las ofertas */
+/* Badge de oferta como cinta roja en la esquina de la tarjeta */
 .badge.bg-success {
-    background-color: #e74c3c !important;
+    background-color: #cc0000 !important;
+    color: #ffffff;
     font-weight: bold;
-    font-size: 0.75rem;
-    animation: parpadeo 1.5s infinite;
-}
-
-/* Parpadeo sutil para llamar la atención sobre las ofertas */
-@keyframes parpadeo {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 6px;
+    /* Sin animaciones - el estilo 2002 era estático */
+    animation: none;
+    border: 1px solid #990000;
 }
 
 /* ===================== VISTA LISTA ===================== */
 
-/* Elementos de la lista con fondo personalizado */
+/* Elementos de lista con estilo plano */
 .list-group-item {
     background-color: var(--color-tarjeta) !important;
-    border-color: var(--color-borde) !important;
+    border: 1px solid var(--color-borde) !important;
     color: var(--color-texto) !important;
-    transition: background-color 0.2s;
+    font-size: 11px;
+    padding: 6px 10px !important;
 }
 
-/* Hover en los elementos de la lista */
+/* Hover: solo cambia el fondo ligeramente */
 .list-group-item:hover {
     background-color: var(--color-fondo-secundario) !important;
 }
 
 /* ===================== TABLAS ===================== */
 
-/* Tablas de detalle e inventario con fondo personalizado */
+/* Tablas con estilo retro (bordes sólidos, sin decoración) */
 .table-dark {
-    --bs-table-bg: var(--color-fondo-secundario);
+    --bs-table-bg: var(--color-tarjeta);
     --bs-table-border-color: var(--color-borde);
+    font-size: 11px;
+}
+
+.table th {
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-acento);
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+}
+
+.table td {
+    padding: 4px 8px;
 }
 
 /* ===================== FORMULARIOS (Login/Registro) ===================== */
 
-/* Cards de formularios */
+/* Cards de formularios con fondo plano */
 .card-header {
-    background-color: var(--color-fondo-secundario) !important;
-    border-bottom: 1px solid var(--color-borde);
+    background: linear-gradient(to bottom, #5c7e10, #4a5942) !important;
+    border-bottom: 1px solid var(--color-bisel-oscuro);
+    color: #ffffff !important;
+    padding: 6px 12px !important;
+}
+
+.card-header h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .card-footer {
-    background-color: var(--color-fondo-secundario) !important;
+    background-color: var(--color-tarjeta) !important;
     border-top: 1px solid var(--color-borde);
+    font-size: 11px;
+    padding: 6px 12px !important;
 }
 
-/* Inputs con estilo oscuro */
+/* Inputs estilo Windows 2000 (borde inset/rebajado) */
 .form-control {
-    background-color: var(--color-fondo) !important;
-    border-color: var(--color-borde) !important;
+    background-color: var(--color-input-fondo) !important;
     color: var(--color-texto) !important;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    padding: 3px 6px;
+    /* Efecto rebajado: bordes oscuros arriba/izquierda, claros abajo/derecha */
+    border: none !important;
+    border-top: 2px solid #1a1a1a !important;
+    border-left: 2px solid #1a1a1a !important;
+    border-bottom: 2px solid #808080 !important;
+    border-right: 2px solid #808080 !important;
+    box-shadow: none !important;
 }
 
-/* Focus en los inputs */
+/* Focus: borde verde sin glow moderno */
 .form-control:focus {
-    border-color: var(--color-acento) !important;
-    box-shadow: 0 0 0 0.2rem rgba(102, 192, 244, 0.25) !important;
+    border-top-color: var(--color-acento) !important;
+    border-left-color: var(--color-acento) !important;
+    border-bottom-color: var(--color-acento-hover) !important;
+    border-right-color: var(--color-acento-hover) !important;
+    box-shadow: none !important;
+    outline: none;
 }
 
-/* ===================== FOOTER ===================== */
+/* Labels de formularios */
+.form-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--color-texto-secundario);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
 
-/* Footer con fondo sólido y borde superior */
-footer {
-    background-color: var(--color-footer) !important;
-    border-top: 2px solid var(--color-acento);
+/* Checkboxes con estilo retro */
+.form-check-label {
+    font-size: 11px;
     color: var(--color-texto-secundario) !important;
+}
+
+/* Select/dropdown retro */
+.form-select {
+    background-color: var(--color-input-fondo) !important;
+    color: var(--color-texto) !important;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    padding: 3px 20px 3px 6px;
+    border: none !important;
+    border-top: 2px solid #1a1a1a !important;
+    border-left: 2px solid #1a1a1a !important;
+    border-bottom: 2px solid #808080 !important;
+    border-right: 2px solid #808080 !important;
 }
 
 /* ===================== BOTONES ===================== */
 
-/* Botón de acento verde Steam */
+/* Botón estilo Windows 2000 con efecto biselado */
+.btn {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 12px;
+    /* Efecto biselado: claro arriba/izquierda, oscuro abajo/derecha */
+    border-top: 2px solid var(--color-bisel-claro) !important;
+    border-left: 2px solid var(--color-bisel-claro) !important;
+    border-bottom: 2px solid var(--color-bisel-oscuro) !important;
+    border-right: 2px solid var(--color-bisel-oscuro) !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Efecto de botón pulsado (bisel invertido) */
+.btn:active {
+    border-top-color: var(--color-bisel-oscuro) !important;
+    border-left-color: var(--color-bisel-oscuro) !important;
+    border-bottom-color: var(--color-bisel-claro) !important;
+    border-right-color: var(--color-bisel-claro) !important;
+}
+
+/* Botón verde Steam (success) */
 .btn-success {
-    background-color: var(--color-acento-verde) !important;
-    border-color: var(--color-acento-verde) !important;
+    background-color: #5c7e10 !important;
+    color: #ffffff !important;
 }
 
 .btn-success:hover {
-    background-color: #3da862 !important;
-    border-color: #3da862 !important;
+    background-color: var(--color-acento-hover) !important;
+    color: #ffffff !important;
 }
 
-/* Botón outline claro con colores del tema */
+/* Botón primario verde */
+.btn-primary {
+    background-color: #4a5942 !important;
+    color: #d2d2d2 !important;
+}
+
+.btn-primary:hover {
+    background-color: #5c7e10 !important;
+    color: #ffffff !important;
+}
+
+/* Botón outline claro */
+.btn-outline-light {
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto) !important;
+    border-color: var(--color-borde) !important;
+}
+
 .btn-outline-light:hover {
-    background-color: var(--color-acento);
-    border-color: var(--color-acento);
-    color: #1b2838;
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-acento) !important;
 }
 
-/* ===================== ANIMACIONES DE TRANSICIÓN ===================== */
+/* Botón outline primario */
+.btn-outline-primary {
+    background-color: var(--color-tarjeta) !important;
+    color: var(--color-texto-secundario) !important;
+}
 
-/* Animación fade-in: opacidad de 0 a 1 */
+.btn-outline-primary:hover {
+    background-color: #4a5942 !important;
+    color: #d2d2d2 !important;
+}
+
+/* Botón de peligro (eliminar) */
+.btn-danger {
+    background-color: #8b0000 !important;
+    color: #ffffff !important;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000 !important;
+}
+
+/* Botón cerrar alerta (btn-close) sin bisel */
+.btn-close {
+    border: none !important;
+}
+
+/* ===================== FOOTER ===================== */
+
+/* Footer oscuro con borde superior fino */
+footer {
+    background-color: var(--color-footer) !important;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-texto-secundario) !important;
+    font-size: 10px;
+}
+
+/* ===================== ALERTAS ===================== */
+
+/* Alertas con estilo plano retro */
+.alert {
+    font-size: 11px;
+    border: 1px solid;
+    padding: 6px 12px;
+}
+
+/* ===================== BADGES ===================== */
+
+/* Badges de plataforma */
+.badge.bg-primary {
+    background-color: #4a5942 !important;
+    font-size: 10px;
+    font-weight: normal;
+    border: 1px solid var(--color-borde);
+    padding: 2px 6px;
+}
+
+/* ===================== PLACEHOLDER DE IMAGEN ===================== */
+
+/* Imagen placeholder con aspecto retro */
+.placeholder-img {
+    image-rendering: pixelated;
+    border: 2px solid var(--color-borde) !important;
+}
+
+/* ===================== ANIMACIONES (opcionales, mínimas) ===================== */
+
+/* Fade-in sutil: solo opacidad */
 .fade-in {
-    animation: fadeIn 300ms ease-in-out;
+    animation: fadeIn 200ms ease-in;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Animación slide-in: desplazamiento desde abajo */
+/* Slide-in sutil */
 .slide-in {
-    animation: slideIn 300ms ease-out;
+    animation: slideIn 200ms ease-out;
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -237,47 +465,58 @@ footer {
 
 /* ===================== SWITCH DE TEMA ===================== */
 
-/* Estilo del switch de tema en la navbar */
-.form-check-label {
-    font-size: 0.85rem;
-    color: var(--color-texto-secundario) !important;
+/* Selector de idioma y switch de tema en la navbar */
+.navbar .form-select {
+    background-color: #2e2e2e !important;
+    color: #d2d2d2 !important;
+    font-size: 10px;
+    padding: 2px 16px 2px 4px;
 }
 
 /* ===================== PAGINACIÓN ===================== */
 
-/* Botón "Cargar más" con estilo del tema */
+/* Botón "Cargar más" */
 #paginacion .btn {
-    border-color: var(--color-acento);
+    background-color: var(--color-tarjeta);
     color: var(--color-acento);
+    border-color: var(--color-borde) !important;
 }
 
 #paginacion .btn:hover {
-    background-color: var(--color-acento);
-    color: #1b2838;
+    background-color: var(--color-fondo-secundario);
+    color: #ffffff;
+}
+
+/* ===================== SEPARADOR RETRO ===================== */
+
+/* Línea horizontal estilo Steam 2002 */
+hr {
+    border: none;
+    border-top: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-bisel-oscuro);
+    height: 2px;
 }
 
 /* ===================== MEDIA QUERIES ===================== */
 
-/* Ajustes para pantallas pequeñas (móviles) */
+/* Pantallas pequeñas (móviles) */
 @media (max-width: 576px) {
-    /* Reducimos el tamaño del banner */
+    /* Banner más compacto */
     .bg-dark.text-light.p-4.mb-4.rounded h1 {
-        font-size: 1.5rem;
+        font-size: 14px;
     }
 
-    /* Barra de filtros en columna en móvil */
+    /* Filtros en columna */
     .d-flex.justify-content-between.align-items-center.mb-4 {
         flex-direction: column;
         align-items: stretch !important;
     }
 
-    /* Select a ancho completo en móvil */
     .d-flex.justify-content-between .form-select {
         width: 100% !important;
-        margin-bottom: 0.5rem;
+        margin-bottom: 4px;
     }
 
-    /* Botones de vista a ancho completo */
     .d-flex.justify-content-between .btn-group {
         width: 100%;
     }
@@ -287,11 +526,10 @@ footer {
     }
 }
 
-/* Ajustes para pantallas medianas (tablets) */
+/* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
-    /* Imagen de detalle a ancho completo */
-    .col-md-4.text-center img {
+    .col-md-4.text-center .placeholder-img {
         max-width: 200px;
-        margin-bottom: 1rem;
+        margin: 0 auto 10px;
     }
 }
