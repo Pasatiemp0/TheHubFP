@@ -1,0 +1,297 @@
+/* styles.css - Estilos principales de Steam 2000 */
+
+/* ===================== VARIABLES CSS ===================== */
+
+/* Tema oscuro (por defecto) - Paleta clásica de Steam */
+body.tema-oscuro {
+    --color-fondo: #1b2838;
+    --color-fondo-secundario: #2a475e;
+    --color-texto: #c7d5e0;
+    --color-texto-secundario: #8f98a0;
+    --color-acento: #66c0f4;
+    --color-acento-verde: #4fc978;
+    --color-navbar: #171a21;
+    --color-tarjeta: #213345;
+    --color-borde: #2a475e;
+    --color-footer: #171a21;
+}
+
+/* Tema claro */
+body.tema-claro {
+    --color-fondo: #e5e5e5;
+    --color-fondo-secundario: #ffffff;
+    --color-texto: #1b2838;
+    --color-texto-secundario: #556772;
+    --color-acento: #1a9fff;
+    --color-acento-verde: #4fc978;
+    --color-navbar: #2a475e;
+    --color-tarjeta: #ffffff;
+    --color-borde: #c7d5e0;
+    --color-footer: #2a475e;
+}
+
+/* ===================== ESTILOS GENERALES ===================== */
+
+/* Aplicamos las variables al body */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    /* Transición suave al cambiar de tema */
+    transition: background-color 0.3s, color 0.3s;
+    /* Fuente del sistema para un look limpio */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===================== NAVBAR ===================== */
+
+/* Fondo sólido oscuro con borde inferior sutil */
+.navbar {
+    background-color: var(--color-navbar) !important;
+    border-bottom: 2px solid var(--color-acento);
+}
+
+/* Color del logo/marca */
+.navbar-brand {
+    color: var(--color-acento) !important;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+}
+
+/* Enlaces de la navbar */
+.navbar-nav .nav-link {
+    color: var(--color-texto) !important;
+    transition: color 0.2s;
+}
+
+/* Hover en los enlaces de la navbar */
+.navbar-nav .nav-link:hover {
+    color: var(--color-acento) !important;
+}
+
+/* ===================== BANNER ===================== */
+
+/* Banner de bienvenida con fondo secundario */
+.bg-dark.text-light.p-4.mb-4.rounded {
+    background-color: var(--color-fondo-secundario) !important;
+    border: 1px solid var(--color-borde);
+}
+
+/* ===================== TARJETAS DE JUEGOS ===================== */
+
+/* Estilo base de las tarjetas */
+.card {
+    background-color: var(--color-tarjeta) !important;
+    border: 1px solid var(--color-borde);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto hover: leve elevación y sombra */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-acento);
+}
+
+/* Título de la tarjeta */
+.card-title {
+    color: var(--color-acento);
+}
+
+/* ===================== ESTRELLAS DE RATING ===================== */
+
+/* Color dorado para las estrellas */
+.text-warning {
+    color: #f5c518 !important;
+    letter-spacing: 2px;
+}
+
+/* ===================== BADGE DE OFERTA ===================== */
+
+/* Badge llamativo para las ofertas */
+.badge.bg-success {
+    background-color: #e74c3c !important;
+    font-weight: bold;
+    font-size: 0.75rem;
+    animation: parpadeo 1.5s infinite;
+}
+
+/* Parpadeo sutil para llamar la atención sobre las ofertas */
+@keyframes parpadeo {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ===================== VISTA LISTA ===================== */
+
+/* Elementos de la lista con fondo personalizado */
+.list-group-item {
+    background-color: var(--color-tarjeta) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto) !important;
+    transition: background-color 0.2s;
+}
+
+/* Hover en los elementos de la lista */
+.list-group-item:hover {
+    background-color: var(--color-fondo-secundario) !important;
+}
+
+/* ===================== TABLAS ===================== */
+
+/* Tablas de detalle e inventario con fondo personalizado */
+.table-dark {
+    --bs-table-bg: var(--color-fondo-secundario);
+    --bs-table-border-color: var(--color-borde);
+}
+
+/* ===================== FORMULARIOS (Login/Registro) ===================== */
+
+/* Cards de formularios */
+.card-header {
+    background-color: var(--color-fondo-secundario) !important;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.card-footer {
+    background-color: var(--color-fondo-secundario) !important;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* Inputs con estilo oscuro */
+.form-control {
+    background-color: var(--color-fondo) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto) !important;
+}
+
+/* Focus en los inputs */
+.form-control:focus {
+    border-color: var(--color-acento) !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 192, 244, 0.25) !important;
+}
+
+/* ===================== FOOTER ===================== */
+
+/* Footer con fondo sólido y borde superior */
+footer {
+    background-color: var(--color-footer) !important;
+    border-top: 2px solid var(--color-acento);
+    color: var(--color-texto-secundario) !important;
+}
+
+/* ===================== BOTONES ===================== */
+
+/* Botón de acento verde Steam */
+.btn-success {
+    background-color: var(--color-acento-verde) !important;
+    border-color: var(--color-acento-verde) !important;
+}
+
+.btn-success:hover {
+    background-color: #3da862 !important;
+    border-color: #3da862 !important;
+}
+
+/* Botón outline claro con colores del tema */
+.btn-outline-light:hover {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    color: #1b2838;
+}
+
+/* ===================== ANIMACIONES DE TRANSICIÓN ===================== */
+
+/* Animación fade-in: opacidad de 0 a 1 */
+.fade-in {
+    animation: fadeIn 300ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación slide-in: desplazamiento desde abajo */
+.slide-in {
+    animation: slideIn 300ms ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================== SWITCH DE TEMA ===================== */
+
+/* Estilo del switch de tema en la navbar */
+.form-check-label {
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario) !important;
+}
+
+/* ===================== PAGINACIÓN ===================== */
+
+/* Botón "Cargar más" con estilo del tema */
+#paginacion .btn {
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+
+#paginacion .btn:hover {
+    background-color: var(--color-acento);
+    color: #1b2838;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 576px) {
+    /* Reducimos el tamaño del banner */
+    .bg-dark.text-light.p-4.mb-4.rounded h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Barra de filtros en columna en móvil */
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    /* Select a ancho completo en móvil */
+    .d-flex.justify-content-between .form-select {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Botones de vista a ancho completo */
+    .d-flex.justify-content-between .btn-group {
+        width: 100%;
+    }
+
+    .d-flex.justify-content-between .btn-group .btn {
+        flex: 1;
+    }
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    /* Imagen de detalle a ancho completo */
+    .col-md-4.text-center img {
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,43 @@
+# config.yaml - Configuración general del proyecto Steam 2000
+
+# Información básica de la aplicación
+app:
+  name: "Steam Store"
+  version: "1.0"
+  language: "es"
+
+# Opciones de visualización de la tienda
+display:
+  items_per_page: 6
+  theme: "dark"
+  show_images: true
+  view_mode: "cards"
+
+# Configuración de animaciones y transiciones
+animations:
+  type: "fade"
+  duration: 300
+
+# Categorías disponibles para filtrar juegos (con soporte bilingüe)
+categories:
+  - id: "all"
+    label_es: "Todos"
+    label_en: "All"
+  - id: "accion"
+    label_es: "Acción"
+    label_en: "Action"
+  - id: "fps"
+    label_es: "FPS"
+    label_en: "FPS"
+  - id: "estrategia"
+    label_es: "Estrategia"
+    label_en: "Strategy"
+  - id: "rpg"
+    label_es: "RPG"
+    label_en: "RPG"
+  - id: "simulacion"
+    label_es: "Simulación"
+    label_en: "Simulation"
+  - id: "aventura"
+    label_es: "Aventura"
+    label_en: "Adventure"

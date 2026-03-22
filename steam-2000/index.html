@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Store 2000</title>
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Nuestros estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <!-- Logo / Nombre de la tienda -->
+            <a class="navbar-brand fw-bold" href="#tienda">STEAM</a>
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienda">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inventario">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registro">Registrarse</a>
+                    </li>
+                </ul>
+
+                <!-- Selector de idioma -->
+                <select id="selector-idioma" class="form-select form-select-sm w-auto me-3">
+                    <option value="es" selected>ES</option>
+                    <option value="en">EN</option>
+                </select>
+
+                <!-- Switch para cambiar entre tema claro y oscuro -->
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="themeSwitch" checked>
+                    <label class="form-check-label text-light" for="themeSwitch">Modo oscuro</label>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+    <!-- Aquí se inyectará el contenido dinámico de cada sección -->
+    <main id="app" class="container my-4">
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-dark text-light text-center py-3 mt-4">
+        <p class="mb-0">Steam Store &copy; 2000 - Proyecto Lenguajes de Marca</p>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+
+    <!-- Bootstrap 5 JS Bundle (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- js-yaml para leer archivos YAML (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <!-- Nuestros scripts (orden importante) -->
+    <script src="js/traducciones.js"></script>
+    <script src="js/dataLoader.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
