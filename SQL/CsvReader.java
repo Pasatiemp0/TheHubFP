@@ -1,17 +1,20 @@
+//AUTOR: Jiandong Yao -- Base de dato(Ejercicio_INSERT_TO)
+
 package SQL;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CsvReader {
 
     public static void main(String[] args) {
-        String file = "Rotten Tomatoes Movies.csv"; //Ruta del archivo .csv
+        String file = "D:\\用户\\Lenovo\\文档\\TheHubFP\\SQL\\Rotten Tomatoes Movies.csv"; //Ruta del archivo .csv
         String line= "";
         String split = ",";
-        String output = "output.sql";               //Se crea en la dirección base el archivo final 
+        String output = "D:\\用户\\Lenovo\\文档\\TheHubFP\\SQL\\output.sql";               //Se crea en la dirección base el archivo final 
 
-         String[] headers;
+        String[] headers = null;
         ArrayList<String[]> data = new ArrayList<>();
         
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -22,22 +25,22 @@ public class CsvReader {
 
             while ((line = br.readLine()) != null) {
                 String [] lineValues = line.split(",?=(?:[^\"]*\"[^\"]*\")*[^\"]*$", -1);
-                data.add(lineValues);          
+                //System.out.println("\033[34mLine: " + String.join("\', ", lineValues) + "\033[0m");
+                data.add(lineValues);      
             }
         } catch (Exception e) {
             System.out.println("\033[31mSomething happened: " + e.getMessage() + "\033[0m");
-            // TODO: handle exception
         }
         
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(output))) {
-            String creatTableQuery = "INSERT INTO Rotten Tomatooes Movies (" + headers + ")\nVALUES\n";
+            String creatTableQuery = "INSERT INTO Rotten Tomatooes Movies (" + Arrays.toString(headers) + ")\nVALUES\n";
             bw.write(creatTableQuery);
             for (String[] lines : data) {
-                bw.append("(" + lines + ")")
+                bw.append("(" + Arrays.toString(lines) + "),\n");
             }
+            bw.close();
         } catch (Exception e) {
             System.out.println("\033[31mSomething happened: " + e.getMessage() + "\033[0m");
-            // TODO: handle exception
         }
         
     }
