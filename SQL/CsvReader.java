@@ -26,7 +26,10 @@ public class CsvReader {
             while ((line = br.readLine()) != null) {
                 String [] lineValues = line.split(",?=(?:[^\"]*\"[^\"]*\")*[^\"]*$", -1);
                 //System.out.println("\033[34mLine: " + String.join("\', ", lineValues) + "\033[0m");
-                data.add(lineValues);      
+                // "Word","Word"","Word"
+                //(\"(\w+|\d+))\",)|((\w+|\d+)),)
+                data.add(lineValues);
+                System.out.println(lineValues[i++]);            
             }
         } catch (Exception e) {
             System.out.println("\033[31mSomething happened: " + e.getMessage() + "\033[0m");
