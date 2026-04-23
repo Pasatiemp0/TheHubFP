@@ -20,6 +20,9 @@ public class CsvReader {
             int i = 0;
             while ((line = br.readLine()) != null) {
                 String [] lineValues = line.split(",?=(?:[^\"]*\"[^\"]*\")*[^\"]*$", -1);
+                String [,] lineValues = line.split(",?=(?:[^\"]*\"[^\"]*\")*[^\"]*$", -1);
+                // "Word","Word"","Word"
+                (\"(\w+|\d+))\",)|((\w+|\d+)),)
                 data.add(lineValues);
                 System.out.println(lineValues[i++]);            
             }
