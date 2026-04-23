@@ -22,7 +22,7 @@ public class CsvReader {
                 headers = line.split(split);
                 System.out.println("\033[32mHeaders: " + String.join(", ", headers) + "\033[0m");
             } 
-            int i = 0;
+
             while ((line = br.readLine()) != null) {
                 String [] lineValues = line.split(",?=(?:[^\"]*\"[^\"]*\")*[^\"]*$", -1);
                 //System.out.println("\033[34mLine: " + String.join("\', ", lineValues) + "\033[0m");
@@ -34,7 +34,7 @@ public class CsvReader {
         } catch (Exception e) {
             System.out.println("\033[31mSomething happened: " + e.getMessage() + "\033[0m");
         }
-
+        
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(output))) {
             String creatTableQuery = "INSERT INTO Rotten Tomatooes Movies (" + Arrays.toString(headers) + ")\nVALUES\n";
             bw.write(creatTableQuery);
