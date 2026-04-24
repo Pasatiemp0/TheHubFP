@@ -5,7 +5,7 @@ import java.sql.*;
 public class PruebaConexion {
 
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC";
+        String url = "jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
         String user = "root";
         String pass = "medqog-6zoBfa-qiwkub";
 

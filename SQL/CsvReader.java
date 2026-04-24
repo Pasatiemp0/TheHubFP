@@ -28,18 +28,17 @@ public class CsvReader {
                 //System.out.println("\033[34mLine: " + String.join("\', ", lineValues) + "\033[0m");
                 // "Word","Word"","Word"
                 //(\"(\w+|\d+))\",)|((\w+|\d+)),)
-                data.add(lineValues);
-                System.out.println(lineValues[i++]);            
+                data.add(lineValues);    
             }
         } catch (Exception e) {
             System.out.println("\033[31mSomething happened: " + e.getMessage() + "\033[0m");
         }
         
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(output))) {
-            String creatTableQuery = "INSERT INTO Rotten Tomatooes Movies (" + Arrays.toString(headers) + ")\nVALUES\n";
+            String creatTableQuery = "INSERT INTO Rotten Tomatooes Movies (" + Arrays.toString(headers).replaceAll("\\[|\\]", "") + ")\nVALUES\n";
             bw.write(creatTableQuery);
             for (String[] lines : data) {
-                bw.append("(" + Arrays.toString(lines) + "),\n");
+                bw.append("(" + Arrays.toString(lines).replaceAll("\\[|\\]", "") + "),\n");
             }
             bw.close();
         } catch (Exception e) {
