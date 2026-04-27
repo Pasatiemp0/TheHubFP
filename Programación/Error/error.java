@@ -1,4 +1,4 @@
-package Error;
+package Programación.Error;
 
 import java.util.Scanner;
 import java.io.*;
