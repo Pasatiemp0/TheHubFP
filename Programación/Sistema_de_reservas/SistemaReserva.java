@@ -1,4 +1,4 @@
-package Sistema_de_reservas;
+package Programación.Sistema_de_reservas;
 
 import java.io.*;
 import java.time.LocalDate;

@@ -1,7 +1,7 @@
 /** @author: Jiandong(Alejandro) Yao
  *   Reto 10++: Sistema de gestión de reservas con manejo de excepciones
  */
-package Sistema_de_reservas;
+package Programación.Sistema_de_reservas;
 
 import java.io.*;
 import java.time.LocalDate;
