@@ -1,4 +1,4 @@
-package Hipoteca;
+package Programación.Hipoteca;
 
 public class Hipoteca {
 

@@ -1,4 +1,4 @@
-package Programación.Reto10_Sistema_de_reservas;
+package Programación.reto10_sistema_de_reservas;
 
 import java.io.*;
 import java.time.LocalDate;
