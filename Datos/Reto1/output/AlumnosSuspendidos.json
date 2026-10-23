@@ -1,0 +1,40 @@
+{
+  "alumnosSuspendidos": [
+    {
+      "nombre": "Pepito Saltarin",
+      "edad": 23,
+      "titulacion": "DAM",
+      "notaMedia": 3.82
+    },
+    {
+      "nombre": "Carlos Largos",
+      "edad": 20,
+      "titulacion": "DAM",
+      "notaMedia": 0.8
+    },
+    {
+      "nombre": "Nina Zancada",
+      "edad": 24,
+      "titulacion": "DAM",
+      "notaMedia": 0.5
+    },
+    {
+      "nombre": "Coco Sonriente",
+      "edad": 26,
+      "titulacion": "DAM",
+      "notaMedia": 4.95
+    },
+    {
+      "nombre": "Nico Rosberg",
+      "edad": 26,
+      "titulacion": "DAM",
+      "notaMedia": 1.17
+    },
+    {
+      "nombre": "Pakita Salas",
+      "edad": 19,
+      "titulacion": "DAM",
+      "notaMedia": 2.34
+    }
+  ]
+}

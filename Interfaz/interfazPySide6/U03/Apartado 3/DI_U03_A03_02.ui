@@ -10,8 +10,24 @@
     <height>390</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>Ejemplo de formulario</string>
+   <string>Caso práctico</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icono.qrc">
+    <normaloff>:/icono/bag.gif</normaloff>:/icono/bag.gif</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>120</width>
+    <height>120</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -25,12 +41,18 @@
         <property name="text">
          <string>Limpiar</string>
         </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="cerrar_boton">
+       <widget class="QPushButton" name="maximizar_boton">
         <property name="text">
-         <string>Cerrar</string>
+         <string>Maximizar</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::ViewFullscreen"/>
         </property>
        </widget>
       </item>
@@ -39,7 +61,9 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icono.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>limpiar_boton</sender>
@@ -58,10 +82,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>cerrar_boton</sender>
+   <sender>maximizar_boton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>close()</slot>
+   <slot>showMaximized()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>411</x>
