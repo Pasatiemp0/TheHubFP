@@ -33,17 +33,20 @@ package Desarrollo.multiprocesos.reto2;
 
 
 public class Cliente implements Runnable{
-    private static int cID     = 0;
+    private int cID;
     private int numeroProducto = (int)(Math.random()*16)+5;
     int tiempo                 = (int)(Math.random()*5001) + 2500;
     String estado              = ""; //esperando, siendo atendido, finalizado
 
-    public Cliente(){
-        cID ++;
+    public Cliente(int cID){
+        this.cID = cID;
         
     }
 
-
+    @Override
+    public String toString() {
+        return cID + "," + numeroProducto + "," + tiempo + "," + estado;
+    }
 
     @Override
     public void run() {
