@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.concurrent.TimeUnit;
 
 public class Reto1 {
     public static final int PRODUCTOS = 10;
@@ -63,7 +64,7 @@ public class Reto1 {
         // Cerrar las entradas
         for (int i = 0; i < 4; i++) {
             entradas[i].close();
-            procesos[i].waitFor();
+            procesos[i].waitFor(3, TimeUnit.SECONDS);
             salidas[i].close();
         }
         System.out.println("Fin: " + repartidos + " productos entregados. Ver fabrica.log");
